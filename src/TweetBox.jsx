@@ -19,20 +19,24 @@ class TweetBox extends Component {
 
     render() {
         return (
-            <div>
-                <input type="text"
+            <div className='container'>
+                <br/>
+                <input className='input'
+                       type="text"
                        placeholder={this.props.prompt}
                        onChange={e => {
                            this.handleChange(e.target.value)
                        }}
                 />
                 <p>{this.state.charsRemaining}</p>
-                <button
+                <button className='button is-primary'
                     onClick={() => this.props.handleTweet(this.state.text)}
                     disabled={this.state.charsRemaining < 0}
                 >
                     Tweet
                 </button>
+                <br/>
+                <br/>
             </div>
         );
     }
